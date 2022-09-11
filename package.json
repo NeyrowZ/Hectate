@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "electron": "^20.1.3"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "open": "^8.4.0"
+  }
+}
