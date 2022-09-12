@@ -26,7 +26,6 @@ const createWindow = async () => {
     Authentification.setWindow(win)
     Caching.setWindow(win)
 
-    mangas = await Caching.loadImages();
     setTimeout(async () => {
         win.send('receive', 'Application.Ready')
     }, 1500)

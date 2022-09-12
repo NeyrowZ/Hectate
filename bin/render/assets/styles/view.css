@@ -1,8 +1,10 @@
+
+
 .viewManga .voile {
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 4;
     bottom: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.65);
@@ -18,7 +20,7 @@
     left: 0;
     right: 0;
     top: 0;
-    z-index: 3;
+    z-index: 5;
     bottom: 0;
     background: #fff;
     padding: 25px 50px;
@@ -66,10 +68,16 @@
     display:inline-flex;
     padding:7px 10px;
     border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     background:#141236;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     color:#fff;
+    transition:150ms;
     font-weight: 400;
+}
+
+.viewManga .action .btn:hover {
+    transform:scale(1.05);
 }
 .viewManga .main p {
     font-weight: 400;

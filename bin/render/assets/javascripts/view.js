@@ -1,3 +1,5 @@
+let cfi = new ColorsfromImage({});
+
 const view_manga = (uuid) => {
     const element = mangas[uuid];
 
@@ -9,5 +11,16 @@ const view_manga = (uuid) => {
     doc.querySelector('.viewManga .chapters').innerText = `${element.chapter_available} chapitres disponible`;
     doc.querySelector('.viewManga .description').innerText = element.description;
 
-
+    cfi.getColors(element.image, function (data) {
+        const highPresenceColor = data.highPresenceColor;
+        doc.querySelector('.viewManga .btn.resume').style.background = highPresenceColor;
+    }, function (msg) {
+       console.error(msg)
+    });
 }
+
+doc.querySelector('.viewManga').addEventListener('click', (e) => {
+    if (e.target.classList.contains('voile'))
+        doc.querySelector('.viewManga').classList.add('hide');
+
+})

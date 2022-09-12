@@ -1,4 +1,6 @@
 const {app, BrowserWindow, ipcMain, ipcRenderer} = require('electron');
+const fs = require('fs');
+
 
 const mangasList = [
     {
@@ -65,27 +67,39 @@ exports.setWindow = (window) => {
     browseApp = window
     console.log("bin/Module/Caching.js")
 }
-
+let readyInCache = [];
+fs.readdir(process.cwd() + "\\bin\\Render\\Caching\\Catalog\\", (err, files) => {
+    files.forEach(file => {
+        readyInCache.push(file.split('.')[0])
+    });
+    loadImages();
+});
 
 
 let index = 0;
 const loadImages = () => {
     if(index < mangasList.length) {
         const element = mangasList[index];
-        const options = {
-            url: element.image,
-            dest: process.cwd() + "\\bin\\Render\\Caching\\Catalog\\"+element.manga_uuid+".png",               // will be saved to /path/to/dest/image.jpg
-        };
-        download.image(options)
-            .then(({ filename }) => {
-                mangasList[index].image = "Caching\\Catalog\\" + element.manga_uuid +".png";
-                console.log( mangasList[index].image); // saved to /path/to/dest/image.jpg
+        if(!readyInCache.includes(element.manga_uuid)) {
+            const options = {
+                url: element.image,
+                dest: process.cwd() + "\\bin\\Render\\Caching\\Catalog\\" + element.manga_uuid + ".png",               // will be saved to /path/to/dest/image.jpg
+            };
+            download.image(options)
+                .then(({filename}) => {
 
-                mangas[element.manga_uuid] = element;
-                index+=1;
-                loadImages()
-            })
-            .catch((err) => console.error(err));
+                })
+                .catch((err) => console.error(err));
+        }
+        mangasList[index].image = "Caching\\Catalog\\" + element.manga_uuid + ".png";
+
+
+
+        mangas[element.manga_uuid] = element;
+        index += 1;
+        loadImages()
+
+
 
     }
 }
