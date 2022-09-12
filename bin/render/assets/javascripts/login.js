@@ -26,6 +26,7 @@ const Authentification_GetAccount = (account) => {
     doc.querySelector('.login_main .head p span').innerText = account.profile.pseudo;
     doc.querySelector('.login_main .head p').classList.add('show');
     setTimeout(() => {
+        doc.querySelector('.main').style.transition = "1000ms";
         load_interface_account(account);
         doc.querySelector('.main').classList.remove('hide');
     }, 1500)

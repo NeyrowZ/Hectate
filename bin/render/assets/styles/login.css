@@ -231,8 +231,8 @@
     fill: transparent;
     stroke-width: 2 !important;
     stroke-dasharray: 50, 200;
-    animation: dash 2s linear infinite;
-    -webkit-animation: dash 2s linear infinite;
+    animation: dash 1.5s linear infinite;
+    -webkit-animation: dash 1.5s linear infinite;
 }
 
 @keyframes rotate {

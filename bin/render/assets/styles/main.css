@@ -6,7 +6,6 @@
     bottom: 5%;
     background: #fff;
     border-radius: 10px;
-    transition: 1000ms;
     transform: translateY(5%);
 }
 
@@ -69,7 +68,7 @@
 }
 
 .main .dashboard {
-    padding: 25px 50px;
+    padding: 25px 30px;
 }
 
 .main .dashboard .list {
@@ -80,7 +79,7 @@
 .main .dashboard h4 {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .main .dashboard .item {

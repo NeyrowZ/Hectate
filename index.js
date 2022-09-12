@@ -1,10 +1,15 @@
 const {app, BrowserWindow, ipcMain, ipcRenderer} = require('electron');
 const Authentification = require('./bin/Module/Authentification')
-app.whenReady().then(() => createWindow())
+const Caching = require("./bin/Module/Caching")
+let mangas;
+app.whenReady().then(async () => {
+    createWindow()
+})
 
 const createWindow = async () => {
+
     const win = new BrowserWindow({
-        width: 575,
+        width: 500,
         height: 708,
         resizable: false,
         transparent: true,
@@ -19,11 +24,12 @@ const createWindow = async () => {
 
     win.loadFile('bin/Render/index.html');
     Authentification.setWindow(win)
+    Caching.setWindow(win)
 
-
+    mangas = await Caching.loadImages();
     setTimeout(async () => {
         win.send('receive', 'Application.Ready')
-    }, 2500)
+    }, 1500)
 
 }
 
@@ -31,6 +37,7 @@ const createWindow = async () => {
 ipcMain.on("execute", async (event, data) => {
     if(data === "Authentification.GetAccount") Authentification.GetAccount();
     if(data === "Authentification.OpenLogin") Authentification.OpenLogin();
+    if(data === "Caching.GetCatalogs") Caching.GetCatalogs();
 })
 
 

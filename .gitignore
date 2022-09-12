@@ -1,5 +1,5 @@
 .idea/
 node_modules/
+bin/Render/Caching/
 package-lock.json
 pnpm-lock.yml
-bin/Auth.js
