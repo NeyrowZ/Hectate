@@ -8,64 +8,149 @@
 
     <link href="assets/styles/base.css" rel="stylesheet">
     <link href="assets/styles/login.css" rel="stylesheet">
+    <link href="assets/styles/main.css" rel="stylesheet">
+    <link href="assets/styles/search.css" rel="stylesheet">
 </head>
 <body>
-<div class="login">
-    <div class="login_main">
-        <div class="head">
-            <h1>Hécate</h1>
-            <div class="loader">
-                <svg viewBox="25 25 50 50">
-                    <circle cx="50" cy="50" r="20"></circle>
-                </svg>
+<div class="contains">
+    <div class="dragzone">
+
+    </div>
+    <div class="login fullheight">
+        <div class="login_main">
+            <div class="head">
+                <h1>Hécate</h1>
+                <div class="loader">
+                    <svg viewBox="25 25 50 50">
+                        <circle cx="50" cy="50" r="20"></circle>
+                    </svg>
+                </div>
+                <p>Salut <span>Axios.js</span></p>
+            </div>
+            <div class="home">
+                <h2>Bienvenue sur Hécate</h2>
+                <div class="item btn_openlink_login">
+                    <div>
+                        <h3>Déjà membre</h3>
+                        <p>Reprendre la lecture là ou vous en étiez</p>
+                    </div>
+                    <div>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                </div>
+                <div class="item btn_openlink_login">
+                    <div>
+                        <h3>Nouveau membre</h3>
+                        <p>Inscription et accès aux contenus gratuitement</p>
+                    </div>
+                    <div>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="home">
-            <h2>Bienvenue sur Hécate</h2>
-            <div class="item btn_openlink_login" >
+        <p class="btn-login-about center about"><a>Découvrir les fonctionnalités</a></p>
+        <div class="login_presentation">
+            <div class="item">
+                <h3>Reprendre là ou vous en étiez</h3>
+                <p>Reprenez vos mangas (ou webtoon) au chapitre et à la page à laquelle vous vous en étiez arrêtés en un
+                    seul clique.</p>
+            </div>
+            <div class="item">
+                <h3>Notification de sortie</h3>
+                <p>Recevez dans l'heure la sortie de vos mangas favoris et si vous le souhaitez les télécharger
+                    automatiquement.</p>
+            </div>
+            <div class="item">
+                <h3>Accessibilité</h3>
+                <p>Hécate s'adapte à tout type d'appareil, que ce soit Windows, Mac ou Linux, puissant ou lent votre
+                    appareil le supportera avec facilité.</p>
+            </div>
+            <div class="item">
+                <h3>Adaptatif</h3>
+                <p>Les ressources mises à disposition sont susceptibles de rencontrer des problèmes qu'Hécate corrige
+                    automatiquement de manière transparente.</p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="main hide">
+        <div class="menu">
+            <div action="btn_opensearch">
+                <i class='bx bx-search-alt-2'></i>
+            </div>
+            <div>
+                <i class='bx bx-user'></i>
+            </div>
+
+        </div>
+        <div class="head-account">
+            <div>
+                <img data="account-avatar" src="">
+            </div>
+            <div>
+                <h3 data="account-pseudo"></h3>
+                <p>Ravis de te revoir.</p>
+            </div>
+        </div>
+        <div class="dashboard">
+            <h4>Vos lectures</h4>
+            <div class="list" list="reading_list">
+
+            </div>
+
+            <h4>La suite arrive bientôt</h4>
+            <div class="list" list="next_list">
+
+            </div>
+        </div>
+
+    </div>
+    <div class="search hide">
+        <div class="voile">
+
+        </div>
+        <div class="main">
+            <div class="noInternet hide">
+                Impossible de se connecter à internet
+            </div>
+            <div class="searchbar">
                 <div>
-                    <h3>Déjà membre</h3>
-                    <p>Reprendre la lecture là ou vous en étiez</p>
+                    <input type="text" placeholder="Rechercher un manga">
                 </div>
                 <div>
-                    <i class='bx bx-right-arrow-alt'></i>
+                    <div action="btn_opensearch">
+                        <i class='bx bx-x' ></i>
+                    </div>
                 </div>
             </div>
-            <div class="item btn_openlink_login">
-                <div>
-                    <h3>Nouveau membre</h3>
-                    <p>Inscription et accès aux contenus gratuitement</p>
+            <div class="tags">
+                <h6>Rechercher par genre</h6>
+                <div list="tags_list">
+                    <span><i class='bx bx-purchase-tag-alt'></i> Shonen</span>
+                    <span><i class='bx bx-purchase-tag-alt'></i> Shojo</span>
+                    <span><i class='bx bx-purchase-tag-alt'></i> Seinen</span>
+                    <span><i class='bx bx-purchase-tag-alt'></i> Josei</span>
+                    <span><i class='bx bx-purchase-tag-alt'></i> Yuri</span>
+                    <span><i class='bx bx-purchase-tag-alt'></i> Yaoi</span>
                 </div>
-                <div>
-                    <i class='bx bx-right-arrow-alt'></i>
+            </div>
+            <div class="mangas">
+                <h6>Les plus populaire</h6>
+                <div list="manga_more_views">
+                    <span>One Piece</span>
+                    <span>Naruto</span>
+                    <span>Dragon Ball</span>
+
                 </div>
             </div>
         </div>
     </div>
-    <p class="btn-login-about center about"><a>Découvrir les fonctionnalités</a></p>
-    <div class="login_presentation">
-        <div class="item">
-            <h3>Reprendre là ou vous en étiez</h3>
-            <p>Reprenez vos mangas (ou webtoon) au chapitre et à la page à laquelle vous vous en étiez arrêtés en un seul clique.</p>
-        </div>
-        <div class="item">
-            <h3>Notification de sortie</h3>
-            <p>Recevez dans l'heure la sortie de vos mangas favoris et si vous le souhaitez les télécharger automatiquement.</p>
-        </div>
-        <div class="item">
-            <h3>Accessibilité</h3>
-            <p>Hécate s'adapte à tout type d'appareil, que ce soit Windows, Mac ou Linux, puissant ou lent votre appareil le supportera avec facilité.</p>
-        </div>
-        <div class="item">
-            <h3>Adaptatif</h3>
-            <p>Les ressources mises à disposition sont susceptibles de rencontrer des problèmes qu'Hécate corrige automatiquement de manière transparente.</p>
-        </div>
-    </div>
-
-    https://accounts.google.com/o/oauth2/v2/auth?client_id=38861859963-d6nei5cmat3vb1ltkgmq7phnn3qnhdrs.apps.googleusercontent.com&response_type=code&scope=email%20profile&redirect_uri=https://api.hugochilemme.com&access_type=offline&prompt=consent
-
 </div>
 <script type="text/javascript" src="assets/javascripts/build.js"></script>
 <script type="text/javascript" src="assets/javascripts/login.js"></script>
+<script type="text/javascript" src="assets/javascripts/search.js"></script>
+
 </body>
 </html>

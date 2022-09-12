@@ -1,0 +1,134 @@
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    background: #fff;
+    border-radius: 10px;
+    transition: 1000ms;
+    transform: translateY(5%);
+}
+
+.main.hide {
+    transform: translateY(110%);
+}
+.main .menu {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    margin-top:10px;
+    justify-content: flex-end;
+    padding: 0 25Px;
+    align-content: center;
+}
+.main .menu div {
+    display:inline-flex;
+    padding:10px;
+    cursor: pointer;
+    margin-left:10px;
+    border-radius: 10px;
+    transition: 150ms;
+}
+
+.main .menu div:hover {
+    background:#f5f5f5;
+    transform:scale(1.05)
+}
+
+.main .menu div i {
+    font-size: 18px;
+}
+
+.main .head-account {
+    display: grid;
+    height: 75px;
+    grid-template-columns: 75px calc(100% - 75Px);
+    padding: 0 60px;
+    align-items: center;
+}
+
+.main .head-account img {
+    border-radius: 100px;
+    text-shadow: 7px 7px 16px #666666;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    width: 50px;
+    image-rendering: high-quality;
+    height: 50px;
+}
+
+.main .head-account h3 {
+    font-weight: 500;
+}
+
+.main .head-account p {
+    margin-top: 5px;
+    color: #505050;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.main .dashboard {
+    padding: 25px 50px;
+}
+
+.main .dashboard .list {
+    margin-bottom: 25px;
+}
+
+
+.main .dashboard h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.main .dashboard .item {
+    display: grid;
+    grid-template-columns: 70px calc(100% - 130px) 60px;
+    padding:15px 20px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 150ms;
+}
+.main .dashboard .item img {
+    width: 50px;
+    text-shadow: 7px 7px 16px #666666;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    height: 50px;
+    object-fit: cover;
+    image-rendering: high-quality;
+    border-radius: 10px;
+}
+
+.main .dashboard .item .progression {
+    text-align: center;
+}
+.main .dashboard .item .progression p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+}
+.main .dashboard .item .progression p span {
+    font-size:11px;
+    color:#606060;
+    font-weight: 300;
+    display:inline-flex;
+    margin-top:2px;
+}
+.main .dashboard .item h5 {
+    font-size: 16px;
+    font-weight: 500;
+}
+.main .dashboard .item p {
+     font-size: 14px;
+    color:#606060;
+     font-weight: 400;
+    margin-top:5px;
+ }
+
+.main .dashboard .item:hover {
+    transform:scale(1.025);
+    background:#f5f5f5
+}
