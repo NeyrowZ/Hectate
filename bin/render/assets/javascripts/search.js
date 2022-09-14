@@ -56,7 +56,7 @@ const displaySearchMenu = async () => {
         doc.querySelector(".search .filter").style.display = "inherit";
         setTimeout(async () => {
             doc.querySelector('.search input').focus();
-        }, 500)
+        }, 250)
     });
 
 
@@ -70,7 +70,7 @@ const resetSelectedTags = () => {
 
 doc.querySelector('.search input').addEventListener('input', (e) => {
     const query = e.target.value.trim();
-    if(query.length < 3) {
+    if(query.length < 2) {
         doc.querySelector('.search .main').style.transform = "translateY(50%)";
         doc.querySelector(".search .result").style.display = "none";
         return doc.querySelector(".search .filter").style.display = "inherit";

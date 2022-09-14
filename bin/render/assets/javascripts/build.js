@@ -1,15 +1,19 @@
 const doc = document;
 const {ipcRenderer} = require('electron');
 let mangas;
+let reading_list = {};
+
 
 const MessageSend = (type) => {
     ipcRenderer.send("execute", type)
 }
 ipcRenderer.send("execute", "Caching.GetCatalogs");
 ipcRenderer.on('receive', async (event, type, data) => {
+    console.log(mangas);
     if (type === "Authentification.GetAccount") return Authentification_GetAccount(data);
     if (type === "Application.Ready") return onReady();
     if(type === "Caching.GetCatalogs") return mangas = data;
+
 })
 
 const onReady = () => {
@@ -29,6 +33,8 @@ const load_interface_account = (account) => {
     for (let i = 0; i < account.reading_list.length; i++) {
         const element = account.reading_list[i];
         const manga = mangas[element.manga_uuid];
+
+        reading_list[element.manga_uuid] = element;
         if (element.chapter !== manga.chapter_available) {
             let div = doc.createElement('div');
             div.classList.add('item');
@@ -48,7 +54,7 @@ const load_interface_account = (account) => {
 
             div_image_img.setAttribute('src', manga.image);
             div_text_h5.innerText = manga.name;
-            div_text_p.innerHTML = `Reprendre Chapitre ${element.chapter}`;
+            div_text_p.innerHTML = `Chapitre ${element.chapter}`;
             div_text.appendChild(div_text_h5);
             div_text.appendChild(div_text_p);
             div_image.appendChild(div_image_img);

@@ -20,7 +20,7 @@ const mangasList = [
     },
     {
         name: "Naruto",
-        image: "https://ekladata.com/XpaCa4uZX_yUUTOTSNpoSf6sf5c@550x413.jpg",
+        image: "https://pbs.twimg.com/media/E4Q8RJzXoAcrqjK.jpg",
         manga_uuid: "bbaf88df-d92b-40e6-8ee6-e56a742563c2",
         resume: {
             chapter: 1050,
@@ -81,18 +81,17 @@ const loadImages = () => {
     if(index < mangasList.length) {
         const element = mangasList[index];
         if(!readyInCache.includes(element.manga_uuid)) {
+            console.log(element)
             const options = {
                 url: element.image,
                 dest: process.cwd() + "\\bin\\Render\\Caching\\Catalog\\" + element.manga_uuid + ".png",               // will be saved to /path/to/dest/image.jpg
             };
             download.image(options)
                 .then(({filename}) => {
-
+                    element.image = "Caching\\Catalog\\" + element.manga_uuid + ".png";
                 })
                 .catch((err) => console.error(err));
         }
-        mangasList[index].image = "Caching\\Catalog\\" + element.manga_uuid + ".png";
-
 
 
         mangas[element.manga_uuid] = element;

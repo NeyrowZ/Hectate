@@ -116,7 +116,7 @@
 
 .login_main .head p {
     position: fixed;
-    bottom:50px;
+    bottom:75px;
     font-size:18px;
     color:#aaa;
     transition: 500ms;

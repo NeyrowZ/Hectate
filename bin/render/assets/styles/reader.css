@@ -1,0 +1,86 @@
+.reader .voile {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 25px;
+    border-radius: 10px;
+    transition:500ms;
+    transform: translateY(4.75%);
+}
+
+
+.reader .main {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    bottom: 0;
+    background: rgb(33,33,33);
+    padding: 25px 50px;
+    border-radius: 10px;
+    transition: 500ms !important;
+    transform: translateY(50%);
+}
+
+.reader.hide .voile {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.reader.hide .main {
+    transform: translateY(110%) !important;
+}
+.reader .loading {
+    display: flex;
+    transition: 500ms;
+    height: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color:#ccc;
+}
+
+.reader .loading img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: inline-flex;
+    border: 3px solid #252525;
+    border-radius: 100px;
+}
+.reader .loading .title {
+    margin-top:25px;
+    font-weight: 400;
+    font-size:18px;
+}
+.reader .loading .log {
+    margin-top:15px;
+    font-size:13px;
+    font-weight: 500;
+    color:#909090;
+}
+.reader .loading svg {
+    width: 120px;
+    height: 120px;
+    margin-top: -110px;
+    display: inline-flex;
+    transform-origin: center;
+    animation: rotate 1s linear infinite;
+    -webkit-animation: rotate 1s linear infinite;
+}
+
+.reader .loading svg circle {
+    stroke: #fc2e57;
+    fill: transparent;
+    stroke-width: 1 !important;
+    stroke-dasharray: 50, 200;
+    animation: dash 2s linear infinite;
+    -webkit-animation: dash 2s linear infinite;
+}

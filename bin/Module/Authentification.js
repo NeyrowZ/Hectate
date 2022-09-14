@@ -12,7 +12,7 @@ let Authentification = {
     reading_list: [
         {manga_uuid: "f78c884e-f657-47bc-88f6-af57ad43c526", chapter: 920, page: 2},
         {manga_uuid: "bbaf88df-d92b-40e6-8ee6-e56a742563c2", chapter:1200, page: 2},
-        {manga_uuid: "2a46ded0-c1fb-4c84-a69b-6a6250d6ae5b", chapter: 38, page: 2},
+        {manga_uuid: "2b46ded0-c1fb-4c84-a69b-6a6250d6ae5b", chapter: 18, page: 2},
     ]
 }
 

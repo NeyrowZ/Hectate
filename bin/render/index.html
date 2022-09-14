@@ -11,6 +11,7 @@
     <link href="assets/styles/main.css" rel="stylesheet">
     <link href="assets/styles/search.css" rel="stylesheet">
     <link href="assets/styles/view.css" rel="stylesheet">
+    <link href="assets/styles/reader.css" rel="stylesheet">
 </head>
 <body>
 <div class="contains">
@@ -78,13 +79,12 @@
     </div>
     <div class="main hide">
         <div class="menu">
+            <div action="btn_openfavoris">
+                <i class='bx bx-star'></i>
+            </div>
             <div action="btn_opensearch">
                 <i class='bx bx-search-alt-2'></i>
             </div>
-            <div>
-                <i class='bx bx-user'></i>
-            </div>
-
         </div>
         <div class="head-account">
             <div>
@@ -100,11 +100,6 @@
             <div class="list" list="reading_list">
 
             </div>
-
-            <!--            <h4>La suite arrive bientôt</h4>-->
-            <!--            <div class="list" list="next_list">-->
-
-            <!--            </div>-->
         </div>
 
     </div>
@@ -161,6 +156,9 @@
         <div class="main">
             <div class="action">
                 <span class="btn resume">Reprendre</span>
+                <div class="button">
+                    <i class='bx bx-star'></i>
+                </div>
             </div>
             <div class="head">
                 <img src="">
@@ -171,11 +169,28 @@
             <p class="description"></p>
         </div>
     </div>
+    <div class="reader hide">
+        <div class="voile">
+
+        </div>
+        <div class="main">
+            <div class="loading">
+                <img src="">
+                <svg viewBox="25 25 50 50">
+                    <circle cx="50" cy="50" r="20"></circle>
+                </svg>
+                <p class="title"></p>
+                <p class="log"></p>
+            </div>
+        </div>
+
+    </div>
 </div>
 <script type="text/javascript" src="assets/javascripts/colors-from-image.js"></script>
 <script type="text/javascript" src="assets/javascripts/build.js"></script>
 <script type="text/javascript" src="assets/javascripts/login.js"></script>
 <script type="text/javascript" src="assets/javascripts/search.js"></script>
 <script type="text/javascript" src="assets/javascripts/view.js"></script>
+<script type="text/javascript" src="assets/javascripts/reader.js"></script>
 </body>
 </html>

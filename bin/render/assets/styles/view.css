@@ -61,13 +61,14 @@
     position: absolute;
     display: flex;
     margin-top:-10px;
-    right: 50px;
+    right: 30px;
 }
 
 .viewManga .action .btn {
     display:inline-flex;
     padding:7px 10px;
     border-radius: 5px;
+    font-size:15px;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     background:#141236;
@@ -75,6 +76,21 @@
     transition:150ms;
     font-weight: 400;
 }
+
+.viewManga .action .button {
+    padding:10px;
+    font-size:15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 150ms;
+    display:inline-flex;
+    margin-left:10px;
+}
+.viewManga .action .button:hover {
+    transform:scale(1.05);
+    background:#f5f5f5;
+}
+
 
 .viewManga .action .btn:hover {
     transform:scale(1.05);
